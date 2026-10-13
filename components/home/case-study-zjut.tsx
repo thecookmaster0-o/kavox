@@ -3,10 +3,25 @@ import { Reveal } from '@/components/reveal'
 
 const KIT = '/images/zjut-tennis-kit.webp'
 
-const VIEWS = [
-  { label: 'Shorts — Front', position: '0% 50%' },
-  { label: 'Shorts — Back', position: '50% 50%' },
-  { label: 'Polo — Front', position: '100% 50%' },
+const PHOTOS = [
+  {
+    label: 'Team award',
+    src: '/images/zjut-team-award.webp',
+    alt: 'ZJUT tennis team holding competition awards in their KAVOX polos',
+    position: '50% 44%',
+  },
+  {
+    label: 'Back customization',
+    src: '/images/zjut-jersey-back.webp',
+    alt: 'ZJUT tennis players showing the custom names and crest on the backs of their polos',
+    position: '50% 38%',
+  },
+  {
+    label: 'Match action',
+    src: '/images/zjut-on-court.webp',
+    alt: 'ZJUT tennis player wearing the finished polo during a match',
+    position: '68% 50%',
+  },
 ]
 
 const JOURNEY = [
@@ -73,30 +88,37 @@ export function CaseStudyZjut() {
             />
           </div>
           <figcaption className="hud flex flex-wrap items-center justify-between gap-2 border-t border-border bg-background px-4 py-3 text-muted-foreground md:px-6">
-            <span>Final kit — Full set</span>
-            <span>Navy · White · Silver grey</span>
+            <span>FINAL KIT — FULL SET</span>
+            <span>NAVY • WHITE • SILVER GREY</span>
           </figcaption>
         </figure>
       </Reveal>
 
-      <ul className="grid grid-cols-3 gap-2 md:gap-4" aria-label="Kit views">
-        {VIEWS.map((v, i) => (
-          <Reveal as="li" key={v.label} delay={i * 100} className="flex flex-col gap-2">
-            <div className="relative aspect-[3/4] overflow-hidden border border-border bg-card">
+      <figure className="flex flex-col gap-4">
+        <ul className="grid grid-cols-3 gap-2 md:gap-4" aria-label="Competition photos">
+          {PHOTOS.map((photo, i) => (
+            <Reveal as="li" key={photo.label} delay={i * 100} className="flex flex-col gap-2">
+              <div className="group relative aspect-[3/4] overflow-hidden border border-border bg-card">
               <Image
-                src={KIT}
-                alt=""
+                src={photo.src}
+                alt={photo.alt}
                 fill
                 loading="lazy"
                 sizes="(min-width: 768px) 33vw, 33vw"
-                className="object-cover"
-                style={{ objectPosition: v.position }}
+                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                style={{ objectPosition: photo.position }}
               />
-            </div>
-            <p className="hud text-[10px] text-muted-foreground md:text-xs">{v.label}</p>
-          </Reveal>
-        ))}
-      </ul>
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/45 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+              </div>
+              <p className="hud text-[10px] text-muted-foreground md:text-xs">{photo.label}</p>
+            </Reveal>
+          ))}
+        </ul>
+        <figcaption className="hud flex flex-wrap items-center justify-between gap-2 border-y border-border py-3 text-muted-foreground">
+          <span>FROM DESIGN TO COMPETITION</span>
+          <span>ZJUT TENNIS TEAM • 2026</span>
+        </figcaption>
+      </figure>
 
       <div className="grid gap-10 lg:grid-cols-12">
         <Reveal className="lg:col-span-4">
