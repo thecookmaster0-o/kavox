@@ -1,5 +1,3 @@
-'use server'
-
 export type BriefState = {
   status: 'idle' | 'success' | 'error'
   message?: string
