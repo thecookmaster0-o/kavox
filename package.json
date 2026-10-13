@@ -5,7 +5,7 @@
   "packageManager": "pnpm@12.3.4",
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build --webpack && node scripts/verify-cloudflare-output.mjs",
     "start": "next start"
   },
   "dependencies": {
