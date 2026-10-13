@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Reveal } from '@/components/reveal'
 import { SectionLabel } from '@/components/section-label'
 import { cn } from '@/lib/utils'
@@ -48,6 +48,13 @@ export function Customizer() {
   const active = layer === 'primary' ? primary : secondary
   const setActive = layer === 'primary' ? setPrimary : setSecondary
   const activeName = COLORS.find((c) => c.value === active)?.name ?? ''
+
+  useEffect(() => {
+    // Warm the browser cache while the controls hydrate so color changes stay instant.
+    const preview = new window.Image()
+    preview.decoding = 'async'
+    preview.src = '/images/jersey-base.webp'
+  }, [])
 
   return (
     <section id="customize" aria-labelledby="customize-title" className="relative isolate overflow-hidden py-24 md:py-36">
@@ -96,9 +103,10 @@ export function Customizer() {
             {/* Jersey */}
             <div className="absolute inset-[16%] isolate overflow-hidden rounded-full">
               <Image
-                src="/images/jersey-base.png"
+                src="/images/jersey-base.webp"
                 alt=""
                 fill
+                loading="lazy"
                 sizes="(min-width: 1024px) 400px, 70vw"
                 className="object-cover"
               />

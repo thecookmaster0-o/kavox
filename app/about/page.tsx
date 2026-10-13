@@ -50,10 +50,10 @@ export default function AboutPage() {
         <Reveal delay={200}>
           <div className="relative mx-auto aspect-[16/9] max-w-[1600px] overflow-hidden md:aspect-[21/9]">
             <Image
-              src="/images/studio.png"
+              src="/images/studio.webp"
               alt="KAVOX studio at night with a designer sewing a jersey prototype among fabric racks"
               fill
-              priority
+              loading="lazy"
               sizes="100vw"
               className="object-cover"
             />

@@ -93,14 +93,14 @@ export function Hero() {
         </p>
 
         <div
-          className="absolute inset-x-0 top-[44%] mx-auto w-[min(960px,150vw)] [mask-image:radial-gradient(ellipse_45%_50%_at_center,black_55%,transparent_100%)] sm:w-[min(960px,95vw)]"
+          className="absolute inset-x-0 top-[44%] mx-auto w-[min(960px,100vw)] [mask-image:radial-gradient(ellipse_45%_50%_at_center,black_55%,transparent_100%)] sm:w-[min(960px,95vw)]"
           style={{
             transform: `translate3d(calc(var(--mx) * 30px), calc(-50% + var(--my) * 20px - var(--sy) * 0.15px), 0)`,
           }}
         >
           <div className="animate-float">
             <Image
-              src="/images/hero-jersey.png"
+              src="/images/hero-jersey.webp"
               alt="Black KAVOX football jersey with electric blue and neon green speed graphics"
               width={1408}
               height={768}

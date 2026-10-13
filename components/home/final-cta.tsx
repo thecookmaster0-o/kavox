@@ -6,7 +6,7 @@ export function FinalCta() {
   return (
     <section aria-labelledby="cta-title" className="grain relative isolate overflow-hidden border-t border-border py-32 md:py-48">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-full h-[90vh] w-[120vw] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[conic-gradient(from_180deg,var(--primary),var(--ultra),var(--signal),var(--blaze),var(--volt),var(--primary))] opacity-40 blur-[120px]" />
+        <div className="absolute left-1/2 top-full h-[90vh] w-[100vw] max-w-[1200px] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[conic-gradient(from_180deg,var(--primary),var(--ultra),var(--signal),var(--blaze),var(--volt),var(--primary))] opacity-40 blur-[120px]" />
       </div>
       <div className="mx-auto flex max-w-[1600px] flex-col items-center gap-12 px-5 text-center md:px-10">
         <Reveal>

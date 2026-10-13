@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Reveal } from '@/components/reveal'
 
-const KIT = '/images/zjut-tennis-kit.jpeg'
+const KIT = '/images/zjut-tennis-kit.webp'
 
 const VIEWS = [
   { label: 'Shorts — Front', position: '0% 50%' },
@@ -67,6 +67,7 @@ export function CaseStudyZjut() {
               src={KIT}
               alt="ZJUT tennis kit: navy match shorts with grey side panels shown front and back, and a white polo jersey with navy collar and crest"
               fill
+              loading="lazy"
               sizes="(min-width: 1600px) 1520px, 100vw"
               className="object-cover"
             />
@@ -86,6 +87,7 @@ export function CaseStudyZjut() {
                 src={KIT}
                 alt=""
                 fill
+                loading="lazy"
                 sizes="(min-width: 768px) 33vw, 33vw"
                 className="object-cover"
                 style={{ objectPosition: v.position }}

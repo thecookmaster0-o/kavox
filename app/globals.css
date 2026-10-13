@@ -116,9 +116,13 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
   }
   body {
     @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
   }
   ::selection {
     background: var(--primary);

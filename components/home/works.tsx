@@ -12,7 +12,7 @@ const PROJECTS = [
     sport: 'Football',
     year: '2026',
     service: 'Custom Team Kit Design',
-    image: '/images/work-football.png',
+    image: '/images/work-football.webp',
     alt: 'Navy and electric blue football jersey hanging in a dark stadium tunnel',
     color: 'var(--primary)',
     coords: '45° 45\' N · 04° 50\' E',
@@ -24,7 +24,7 @@ const PROJECTS = [
     sport: 'Basketball',
     year: '2026',
     service: 'Identity + Kit System',
-    image: '/images/work-basketball.png',
+    image: '/images/work-basketball.webp',
     alt: 'Black and orange basketball jersey on a hanger in a dark indoor court',
     color: 'var(--blaze)',
     coords: '40° 42\' N · 74° 00\' W',
@@ -36,7 +36,7 @@ const PROJECTS = [
     sport: 'Volleyball',
     year: '2025',
     service: 'Custom Team Kit Design',
-    image: '/images/work-volleyball.png',
+    image: '/images/work-volleyball.webp',
     alt: 'Graphite and purple volleyball jersey folded on a concrete plinth under a spotlight',
     color: 'var(--ultra)',
     coords: '49° 49\' N · 18° 15\' E',
@@ -48,7 +48,7 @@ const PROJECTS = [
     sport: 'Tennis',
     year: '2025',
     service: 'Apparel Line Design',
-    image: '/images/work-tennis.png',
+    image: '/images/work-tennis.webp',
     alt: 'White and neon green tennis polo floating against a dark background',
     color: 'var(--volt)',
     coords: '51° 30\' N · 00° 07\' W',
@@ -92,6 +92,7 @@ export function Works() {
                       src={p.image}
                       alt={p.alt}
                       fill
+                      loading="lazy"
                       sizes="(min-width: 1024px) 66vw, 100vw"
                       className="object-cover transition-transform duration-[1.6s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                     />
