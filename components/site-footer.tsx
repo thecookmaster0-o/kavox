@@ -33,7 +33,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-3">
           <p className="hud text-muted-foreground">Contact</p>
           <Link href="/contact" className="text-sm hover:text-primary">Project brief</Link>
-          <a href="mailto:studio@kavoxsports.com" className="text-sm hover:text-primary">studio@kavoxsports.com</a>
+          <a href="mailto:founder@kavoxsports.com" className="text-sm hover:text-primary">founder@kavoxsports.com</a>
         </div>
       </div>
 
