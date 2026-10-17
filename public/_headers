@@ -10,5 +10,8 @@
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
 
+/api/*
+  Cache-Control: no-store
+
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable

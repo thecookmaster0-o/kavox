@@ -19,9 +19,6 @@ export async function submitBrief(_prev: BriefState, formData: FormData): Promis
   const team = text(formData, 'team', 120)
   const sport = text(formData, 'sport', 40)
   const quantity = Number(text(formData, 'quantity', 6))
-  const colors = text(formData, 'colors', 200)
-  const deadline = text(formData, 'deadline', 20)
-  const message = text(formData, 'message', 3000)
   const logo = formData.get('logo')
 
   const errors: BriefState['errors'] = {}
@@ -41,18 +38,19 @@ export async function submitBrief(_prev: BriefState, formData: FormData): Promis
     return { status: 'error', message: 'Please fix the highlighted fields.', errors }
   }
 
-  // Connect an email or database integration here to deliver briefs to the studio inbox.
-  console.log('[kavox] New project brief', {
-    name,
-    email,
-    team,
-    sport,
-    quantity,
-    colors,
-    deadline,
-    hasLogo: logo instanceof File && logo.size > 0,
-    messageLength: message.length,
-  })
+  try {
+    const response = await fetch('/api/brief', {
+      method: 'POST',
+      body: formData,
+    })
+
+    const result = (await response.json().catch(() => ({}))) as { message?: string }
+    if (!response.ok) {
+      return { status: 'error', message: result.message || 'We could not send your brief. Please try again.' }
+    }
+  } catch {
+    return { status: 'error', message: 'We could not reach the studio. Please check your connection and try again.' }
+  }
 
   return {
     status: 'success',
